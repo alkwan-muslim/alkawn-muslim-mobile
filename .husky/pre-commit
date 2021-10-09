@@ -1,0 +1,9 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Check Prettier standards
+npm run lint ||
+(
+    echo 'your style is bad.';
+    false;
+)

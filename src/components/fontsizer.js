@@ -1,4 +1,4 @@
-const fontsizer = windowWidth => {
+const fontsizer = (windowWidth) => {
   if (windowWidth > 400) {
     return 18;
   } else if (windowWidth > 250) {

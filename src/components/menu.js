@@ -8,20 +8,20 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import fontsizer from '../components/fontsizer';
-import {textblack} from '../../theme.json';
-import {Iqro, Juzamma, Quran, Wirid} from '../assets/icons';
+import { textblack } from '../../theme.json';
+import { Iqro, Juzamma, Quran, Wirid } from '../assets/icons';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
 const menuname = [
-  {id: 1, title: 'Al-Quran', icon: Quran},
-  {id: 2, title: 'Juz Amma', icon: Juzamma},
-  {id: 3, title: 'Wirid', icon: Wirid},
-  {id: 4, title: 'Iqro', icon: Iqro},
+  { id: 1, title: 'Al-Quran', icon: Quran },
+  { id: 2, title: 'Juz Amma', icon: Juzamma },
+  { id: 3, title: 'Wirid', icon: Wirid },
+  { id: 4, title: 'Iqro', icon: Iqro },
 ];
 
-const Menu = ({navigation}) => {
+const Menu = ({ navigation }) => {
   return (
     <View>
       <Text
@@ -30,13 +30,14 @@ const Menu = ({navigation}) => {
           fontSize: fontsizer(windowWidth),
           color: textblack,
           marginBottom: 10,
-        }}>
+        }}
+      >
         Explore Alkawn Muslim
       </Text>
       <FlatList
         data={menuname}
         numColumns={3}
-        renderItem={({item}) => (
+        renderItem={({ item }) => (
           <TouchableOpacity
             onPress={() => navigation.navigate('Al-Quran')}
             style={{
@@ -50,7 +51,8 @@ const Menu = ({navigation}) => {
               borderRadius: 10,
               alignItems: 'center',
               justifyContent: 'center',
-            }}>
+            }}
+          >
             <Image
               source={item.icon}
               style={{
@@ -66,7 +68,8 @@ const Menu = ({navigation}) => {
                 fontSize: fontsizer(windowWidth) - 4,
                 color: textblack,
                 fontFamily: 'Poppins-Regular',
-              }}>
+              }}
+            >
               {item.title}
             </Text>
           </TouchableOpacity>
