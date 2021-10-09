@@ -5,6 +5,7 @@ import {createMaterialBottomTabNavigator} from '@react-navigation/material-botto
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Home from './pages/home';
 import Bookmark from './pages/bookmark';
+import Alquran from './pages/alquran';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -48,6 +49,11 @@ const Router = () => {
         name="App"
         component={MyMenu}
         options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Al-Quran"
+        component={Alquran}
+        options={{headerShown: true}}
       />
     </Stack.Navigator>
   );

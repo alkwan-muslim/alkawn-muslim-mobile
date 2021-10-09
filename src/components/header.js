@@ -44,7 +44,7 @@ const Header = () => {
           source={HeaderImage}
           style={{
             width: windowWidth * 0.4,
-            height: windowHeight * 0.257,
+            height: windowHeight * 0.257, 
             flex: 1,
           }}
         />

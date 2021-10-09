@@ -21,7 +21,7 @@ const menuname = [
   {id: 4, title: 'Iqro', icon: Iqro},
 ];
 
-const Menu = () => {
+const Menu = ({navigation}) => {
   return (
     <View>
       <Text
@@ -38,6 +38,7 @@ const Menu = () => {
         numColumns={3}
         renderItem={({item}) => (
           <TouchableOpacity
+            onPress={() => navigation.navigate('Al-Quran')}
             style={{
               width: windowWidth * 0.267,
               height: windowHeight * 0.133,

@@ -1,8 +1,8 @@
 import React from 'react';
-import {StyleSheet, Text, StatusBar, View} from 'react-native';
+import {StyleSheet, StatusBar, View} from 'react-native';
 import Header from '../components/header';
 import Menu from '../components/menu';
-const Home = () => {
+const Home = ({navigation}) => {
   return (
     <View
       style={{
@@ -16,7 +16,7 @@ const Home = () => {
         backgroundColor="#f6f6f6"
       />
       <Header />
-      <Menu />
+      <Menu navigation={navigation} />
     </View>
   );
 };
