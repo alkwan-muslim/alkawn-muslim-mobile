@@ -44,7 +44,7 @@ const Alquran = () => {
 
   useEffect(() => {
     getAlquran();
-  });
+  }, []);
 
   return (
     <View style={{ marginHorizontal: 20 }}>
