@@ -15,7 +15,7 @@ const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
 const menuname = [
-  { id: 1, title: 'Al-Quran', icon: Quran },
+  { id: 1, title: 'Al-Quran', icon: Quran, passing: 'Al-Quran' },
   { id: 2, title: 'Juz Amma', icon: Juzamma },
   { id: 3, title: 'Wirid', icon: Wirid },
   { id: 4, title: 'Iqro', icon: Iqro },
@@ -37,16 +37,16 @@ const Menu = ({ navigation }) => {
       <FlatList
         data={menuname}
         numColumns={3}
+        columnWrapperStyle={{ justifyContent: 'space-between' }}
         renderItem={({ item }) => (
           <TouchableOpacity
-            onPress={() => navigation.navigate('Al-Quran')}
+            onPress={() => navigation.navigate(item.passing)}
             style={{
-              width: windowWidth * 0.267,
+              width: windowWidth * 0.275,
               height: windowHeight * 0.133,
               backgroundColor: '#FFFFFF',
               paddingHorizontal: 10,
               paddingVertical: 5,
-              marginRight: 10,
               marginBottom: 10,
               borderRadius: 10,
               alignItems: 'center',
