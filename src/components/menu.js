@@ -16,9 +16,11 @@ const windowHeight = Dimensions.get('window').height;
 
 const menuname = [
   { id: 1, title: 'Al-Quran', icon: Quran, passing: 'Al-Quran' },
-  { id: 2, title: 'Juz Amma', icon: Juzamma },
+  { id: 2, title: 'Juz Amma', icon: Juzamma, passing: 'Juz Amma' },
   { id: 3, title: 'Wirid', icon: Wirid },
   { id: 4, title: 'Iqro', icon: Iqro },
+  { id: 5, title: 'Iqro', icon: Iqro },
+  { id: 6, title: 'Iqro', icon: Iqro },
 ];
 
 const Menu = ({ navigation }) => {
@@ -38,6 +40,7 @@ const Menu = ({ navigation }) => {
         data={menuname}
         numColumns={3}
         columnWrapperStyle={{ justifyContent: 'space-between' }}
+        RowWrapp
         renderItem={({ item }) => (
           <TouchableOpacity
             onPress={() => navigation.navigate(item.passing)}
@@ -47,10 +50,9 @@ const Menu = ({ navigation }) => {
               backgroundColor: '#FFFFFF',
               paddingHorizontal: 10,
               paddingVertical: 5,
-              marginBottom: 10,
+              marginBottom: 20,
               borderRadius: 10,
               alignItems: 'center',
-              justifyContent: 'center',
             }}
           >
             <Image

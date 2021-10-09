@@ -6,6 +6,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import Home from './pages/home';
 import Bookmark from './pages/bookmark';
 import Alquran from './pages/alquran';
+import Juzamma from './pages/juzamma';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -57,16 +58,24 @@ const Router = () => {
         options={{
           headerShown: true,
           headerStyle: {
-            shadowColor: '#000',
-            shadowOffset: {
-              width: 0,
-              height: 1,
-            },
-            shadowOpacity: 0.18,
-            shadowRadius: 1.0,
-
-            elevation: 1,
+            borderBottomColor: '#CBCBCB',
+            borderBottomWidth: 0.6,
+            backgroundColor: '#F6f6f6',
           },
+          headerTitleAlign: 'center',
+        }}
+      />
+      <Stack.Screen
+        name='Juz Amma'
+        component={Juzamma}
+        options={{
+          headerShown: true,
+          headerStyle: {
+            borderBottomColor: '#CBCBCB',
+            borderBottomWidth: 0.6,
+            backgroundColor: '#F6f6f6',
+          },
+          headerTitleAlign: 'center',
         }}
       />
     </Stack.Navigator>

@@ -1,12 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {
-  StyleSheet,
-  ScrollView,
-  Text,
-  View,
-  Dimensions,
-  TextInput,
-} from 'react-native';
+import { ScrollView, Text, View, Dimensions, TextInput } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { textblack, textsemiblack, bgprimary } from '../../theme.json';
 import Loading from '../components/loading';
@@ -16,14 +9,14 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-const Alquran = () => {
+const Juzamma = () => {
   const [isLoading, setLoading] = useState(true);
   const [alquran, setAlquran] = useState({});
   const [search, onChangeSearch] = useState('');
   const surah = [];
 
   const getSurah = async () => {
-    for (let i = 1; i <= 114; i++) {
+    for (let i = 78; i <= 114; i++) {
       surah.push(i);
     }
   };
@@ -197,6 +190,4 @@ const Alquran = () => {
   );
 };
 
-export default Alquran;
-
-const styles = StyleSheet.create({});
+export default Juzamma;
