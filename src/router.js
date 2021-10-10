@@ -5,7 +5,8 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Home from './pages/home';
 import Bookmark from './pages/bookmark';
-import Alquran from './pages/alquran';
+import Alquran from './pages/alquran/alquran';
+import AlquranSlug from './pages/alquran/slug';
 import Juzamma from './pages/juzamma';
 
 const Tab = createMaterialBottomTabNavigator();
@@ -77,6 +78,22 @@ const Router = () => {
           },
           headerTitleAlign: 'center',
         }}
+      />
+      <Stack.Screen
+        name='Al-Quran Detail'
+        component={AlquranSlug}
+        options={({ route }) => ({
+          title: route.params.name_latin,
+          headerStyle: {
+            backgroundColor: '#FF8A00',
+          },
+          headerStyle: {
+            borderBottomColor: '#CBCBCB',
+            borderBottomWidth: 0.6,
+            backgroundColor: '#F6f6f6',
+          },
+          headerTitleAlign: 'center',
+        })}
       />
     </Stack.Navigator>
   );

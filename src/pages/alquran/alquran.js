@@ -6,17 +6,19 @@ import {
   View,
   Dimensions,
   TextInput,
+  ImageBackground,
 } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import { textblack, textsemiblack, bgprimary } from '../../theme.json';
-import Loading from '../components/loading';
-import fontsizer from '../components/fontsizer';
+import { textblack, textsemiblack, bgprimary } from '../../../theme.json';
+import Loading from '../../components/loading';
+import fontsizer from '../../components/fontsizer';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { SurahNumber } from '../../assets/icons';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-const Alquran = () => {
+const Alquran = ({ navigation }) => {
   const [isLoading, setLoading] = useState(true);
   const [alquran, setAlquran] = useState({});
   const [search, onChangeSearch] = useState('');
@@ -97,7 +99,7 @@ const Alquran = () => {
                 paddingLeft: 0,
                 marginLeft: 10,
               }}
-              onChangeText={onChangeSearch}
+              onChangeText={(text) => onChangeSearch(text)}
               value={search}
               placeholder='Pencarian...'
             />
@@ -116,42 +118,44 @@ const Alquran = () => {
             })
             .map((item) => (
               <TouchableOpacity
+                onPress={() => {
+                  navigation.navigate('Al-Quran Detail', {
+                    id: item,
+                    name_latin: alquran[item].name_latin,
+                    number_of_ayah: alquran[item].number_of_ayah,
+                  });
+                }}
                 style={{
                   flexDirection: 'row',
                   width: windowWidth * 0.9,
-                  height: windowHeight * 0.257413,
-                  backgroundColor: '#FFFFFF',
+                  borderBottomColor: '#BBC4CE',
+                  borderBottomWidth: 0.5,
                   alignItems: 'center',
-                  marginVertical: 10,
                   borderRadius: 10,
-                  shadowColor: '#000',
-                  shadowOffset: {
-                    width: 0,
-                    height: 1,
-                  },
-                  shadowOpacity: 0.18,
-                  shadowRadius: 1.0,
-
-                  elevation: 1,
                 }}
                 key={item}
               >
-                <Text
+                <ImageBackground
+                  source={SurahNumber}
                   style={{
-                    fontFamily: 'Poppins-Regular',
-                    fontSize: fontsizer(windowWidth),
-                    color: textblack,
-                    backgroundColor: '#f6f6f6',
-                    width: 40,
-                    height: 40,
-                    marginHorizontal: 20,
-                    textAlign: 'center',
-                    textAlignVertical: 'center',
-                    borderRadius: 10,
+                    width: windowWidth * 0.0975912408759124,
+                    height: windowHeight * 0.0537424058323208,
+                    marginRight: 20,
                   }}
                 >
-                  {item}
-                </Text>
+                  <Text
+                    style={{
+                      fontFamily: 'Poppins-Regular',
+                      fontSize: fontsizer(windowWidth) - 2,
+                      color: textblack,
+                      textAlign: 'center',
+                      textAlignVertical: 'center',
+                      flex: 1,
+                    }}
+                  >
+                    {item}
+                  </Text>
+                </ImageBackground>
                 <View
                   style={{
                     marginVertical: 'auto',
