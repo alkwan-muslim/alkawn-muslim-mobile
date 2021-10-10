@@ -106,7 +106,7 @@ const Alquran = ({ navigation }) => {
           </View>
           {surah
             .filter((item) => {
-              if (search == '') {
+              if (search === '') {
                 return item;
               } else if (
                 alquran[item].name_latin

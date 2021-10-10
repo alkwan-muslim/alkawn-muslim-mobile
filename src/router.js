@@ -85,9 +85,6 @@ const Router = () => {
         options={({ route }) => ({
           title: route.params.name_latin,
           headerStyle: {
-            backgroundColor: '#FF8A00',
-          },
-          headerStyle: {
             borderBottomColor: '#CBCBCB',
             borderBottomWidth: 0.6,
             backgroundColor: '#F6f6f6',

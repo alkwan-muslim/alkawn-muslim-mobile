@@ -45,7 +45,7 @@ const AlquranSlug = ({ route }) => {
       }
     };
     getAlquran();
-  }, []);
+  }, [id]);
 
   return (
     <View style={{ marginHorizontal: 20 }}>
